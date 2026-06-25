@@ -1,0 +1,30 @@
+======================================================================
+EXP1 SMOKE RUN: 6-Defense Comparison (seed=42)
+  Model: deepseek-v3.2
+  CoEvo: 3 rounds × 15 attacks
+  Output: experiments/exp1_results_seed42_v4
+======================================================================
+
+[Phase 0] Loading JBB-100 data and configuring LM...
+  Train: 120 (60H/60B)
+  Val:   40 (20H/20B)
+  Test:  40 (20H/20B)
+  Split hash: 40da76a47480ea49
+  Manifest: experiments/exp1_results_seed42_v4/split_manifest_seed42.json
+  Std domain: 20 attacks + 20 benign
+  Created LM: DeepSeek V3.2 (openrouter/deepseek/deepseek-v3.2)
+  Defender: DeepSeek V3.2 (timeout=45.0s, retries=2)
+  Defender LM: DeepSeek V3.2
+  DSPy trainset: 120 examples
+
+======================================================================
+[Phase 1] Compiling defenses
+======================================================================
+  [1-2/6] Static baselines SKIPPED
+  [3/6] DSPy Unoptimized (no compilation)
+  [4/6] DSPy-BFS SKIPPED (--only)
+  [5/6] DSPy-MIPROv2 SKIPPED (--only)
+  Resetting LM connection pool...
+    Connection pool reset OK
+  [6/6] CoEvoOptimizer (3R × 15A)...
+CoEvoOptimizer: Using 60 benign examples for OR calibration

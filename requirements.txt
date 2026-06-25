@@ -1,0 +1,8 @@
+# Install all dependencies via pyproject.toml:
+#   pip install -e ".[all,dev]"
+#
+# This file is kept for environments that require a flat requirements.txt.
+# To regenerate:
+#   pip freeze --exclude-editable > requirements.txt
+
+-e ".[all,dev]"

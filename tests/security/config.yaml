@@ -1,0 +1,32 @@
+# Security Testing Configuration
+# For testing openai-cs-agents-demo with dspy-guardrails
+
+target:
+  type: openai-cs-agent
+  base_url: http://localhost:8000
+  mode: api  # "api" or "module"
+
+tests:
+  redteam:
+    enabled: true
+    benchmarks:
+      - jailbreakbench
+      - advbench
+      # - harmbench  # Full benchmark suite; enable for thorough testing
+    airline_specific: true
+
+  blueteam:
+    enabled: true
+
+  hallucination:
+    enabled: true
+
+output:
+  dir: ./tests/security/reports/output
+  formats:
+    - console
+    - json
+    - html
+
+verbose: false
+num_threads: 1
